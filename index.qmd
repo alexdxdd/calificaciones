@@ -1,0 +1,11 @@
+---
+title: "Análisis de datos de calificaciones"
+author: "Alex Fernández"
+format: html
+---
+
+## Carga de datos
+
+## Gráfico de dispersión
+
+## Gráfico de barras
