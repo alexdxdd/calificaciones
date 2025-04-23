@@ -6,6 +6,47 @@ format: html
 
 ## Carga de datos
 
+```{r}
+#| label: carga-datos
+
+datos <- read.csv("StudentsPerformance.csv")
+```
+
 ## Gráfico de dispersión
 
+```{r}
+#| label: grafico-dispersion
+
+plot(
+  x = datos$math.score,
+  y = datos$reading.score,
+  xlab = "Calificación matemáticas",
+  ylab = "Calificación escritura",
+  pch = 19, col = "steelblue",
+  main = "Calificación en matemáticas vs calificaión en escritura"
+)
+```
+
+
 ## Gráfico de barras
+
+```{r}
+#| label: grafico-barras
+
+promedio_calificaciones_x_sexo <- aggregate(
+  data = datos,
+  math.score ~ gender,
+  FUN = mean,
+  na.rm = TRUE
+)
+
+barplot(
+  height = promedio_calificaciones_x_sexo$math.score,
+  names.arg = promedio_calificaciones_x_sexo,
+  xlab = "Sexo",
+  ylab = "Promedio en matemáticas",
+  main = "Promedio en matemáticas por sexo",
+)
+```
+
+
